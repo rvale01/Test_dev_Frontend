@@ -8,7 +8,7 @@ import './App.css'
 const Question1 = (props) => {
     return (
         <div >
-            <div className='top-section '>
+            <div className='top-section'>
                 <div className='offset-1 align-self-center title'> Hello! Here is my test.</div>
                 <div className='offset-1 align-self-center title'>Select one of these buttons to go to the next page</div>
             </div>
