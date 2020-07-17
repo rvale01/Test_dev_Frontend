@@ -1,5 +1,5 @@
  body {
- 	font-size: 100%; /* with this setup you get 1:1 em , so 1em is actually number 1 */
+ 	font-size: 700%; /* with this setup you get 1:1 em , so 1em is actually number 1 */
  }
  
  #counter {
@@ -48,7 +48,7 @@
 
 .top-section{
     background-image: linear-gradient( #FF9FA5, #FFDAC1);
-    height: 100%;
+    height: 23rem;
     width: 100%;
     padding-top: 8em;
 }
@@ -59,13 +59,13 @@ button{
     background-color: white;
     border-style: solid;
     /* padding: 2.5rem; */
-    width: 60px;
-    height: 30px;
-    margin-top: 30px;
+    width: 12rem;
+    height: 3rem;
+    margin-top: 3rem;
 }
 
 .title{
-    font-size: 30px; 
+    font-size: 2em; 
     color: white;
     /* font-size: 0.5em;  */
 }

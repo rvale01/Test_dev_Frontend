@@ -40,7 +40,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "npm": "6.12.*",
+    "npm": "6.12.1",
     "node": "12.13.*"
   },
   "browserslist": {

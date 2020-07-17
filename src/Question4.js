@@ -103,7 +103,7 @@ class Question4 extends React.Component {
             }
             .box {
                 background-color:white;
-                width:100px;
+                width:10rem;
                 text-align:center;
             }
           `}
