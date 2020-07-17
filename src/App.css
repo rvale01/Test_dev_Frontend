@@ -1,5 +1,5 @@
  body {
- 	font-size: 700%; /* with this setup you get 1:1 em , so 1em is actually number 1 */
+ 	font-size: 100%; /* with this setup you get 1:1 em , so 1em is actually number 1 */
  }
  
  #counter {
