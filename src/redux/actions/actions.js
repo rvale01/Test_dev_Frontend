@@ -59,9 +59,10 @@ export const getNameCountry = (data) => (dispatch) => {
 }
 
 export const saveUser = (value) => async (dispatch) => {
-    let username = value.name
+    let name = value.name
     let password = value.password
-    var data = JSON.stringify({ "username": username, "password": password });
+    let email = value.email
+    var data = JSON.stringify({ "name": name, "password": password, "email":email });
 
     var config = {
         method: 'post',
@@ -79,10 +80,10 @@ export const saveUser = (value) => async (dispatch) => {
         .catch(function (error) {
             console.log(error);
         });
-console.log(response)
+    console.log(response)
     dispatch({
         type: actions.SAVE_USER,
-        payload: value
+        payload: response
     })
 }
 
