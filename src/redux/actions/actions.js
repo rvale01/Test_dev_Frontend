@@ -62,7 +62,7 @@ export const saveUser = (value) => async (dispatch) => {
     let name = value.name
     let password = value.password
     let email = value.email
-    var data = JSON.stringify({ "name": name, "password": password, "email":email });
+    var data = JSON.stringify({ "name": name, "password": password, "email": email });
 
     var config = {
         method: 'post',
@@ -73,18 +73,51 @@ export const saveUser = (value) => async (dispatch) => {
         data: data
     };
 
-    let response = axios(config)
+    axios(config)
         .then(function (response) {
             console.log(JSON.stringify(response.data));
+            dispatch({
+                type: actions.SAVE_USER,
+                payload: response.data.result
+            })
+        })
+        .catch(function (error) {
+            console.log(error);
+            dispatch({
+                type: actions.SAVE_USER,
+                payload: error
+            })
+        });
+
+}
+
+export const loginUser = (value) => async (dispatch) => {
+    let password = value.password
+    let email = value.email
+    console.log(email)  
+    var data = JSON.stringify({ "password": password, "email": email });
+
+    var config = {
+        method: 'post',
+        url: `${link}/question6/login`,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: data
+    };
+
+    axios(config)
+        .then(function (response) {
+            dispatch({
+                type: actions.LOGIN_USER,
+                payload: response.data.result
+            })
         })
         .catch(function (error) {
             console.log(error);
         });
-    console.log(response)
-    dispatch({
-        type: actions.SAVE_USER,
-        payload: response
-    })
+   
+
 }
 
 const sendResult = (result) => (

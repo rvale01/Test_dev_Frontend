@@ -3,7 +3,8 @@ import {
     GET_INFO,
     GET_COUNTRIES,
     GET_RESULT,
-    SAVE_USER
+    SAVE_USER,
+    LOGIN_USER
 } from '../actions/types';
 
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
     info: '',
     country: '',
     result: 0,
-    user:''
+    user: '',
+    responseLogin:''
 }
 
 const reducers = (state = initialState, action) => {
@@ -43,7 +45,11 @@ const reducers = (state = initialState, action) => {
                 ...state,
                 user: action.payload
             }
-
+        case LOGIN_USER:
+            return {
+                ...state,
+                responseLogin: action.payload
+            }
 
         default:
             return state

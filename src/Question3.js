@@ -4,22 +4,25 @@ import { connect } from 'react-redux';
 import { getAllCountries } from './redux/actions/actions';
 import { Link } from 'react-router-dom'
 
-const Question1 = (props) => {
+const Question3 = (props) => {
     const [countries, setCountries] = useState(props.countries)
     const [pageMax, setMax] = useState(7)
     const [pageMin, setMin] = useState(0)
     const [filterName, setFilter] = useState("")
+    const [updated, setUpdate] = useState(false)
+
     useEffect(() => {
         props.getAllCountries()
         setCountries(props.countries);
-    }, [props.countries]);
+        setUpdate(true)
+    }, updated);
 
 
 
     return (
         <div className='top-section' style={{ height: '52em' }}>
             <div className="col-12" >
-                <Link to="/question4" className='offset-1' style={{marginRight:20}}>
+                <Link to="/question4" className='offset-1' style={{ marginRight: 20 }}>
                     <button >
                         Next question
                     </button>
@@ -29,7 +32,7 @@ const Question1 = (props) => {
                         Home
                 </button>
                 </Link>
-                <form className='offset-1' style={{marginTop:20, marginBottom:20}}>
+                <form className='offset-1' style={{ marginTop: 20, marginBottom: 20 }}>
                     <div >
                         <label style={{ marginRight: 20 }}>Name</label>
                         <input type="text" name="name" onChange={(e) => setFilter(e.target.value)} />
@@ -118,4 +121,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 //export
-export default connect(mapStateToProps, mapDispatchToProps)(Question1)
+export default connect(mapStateToProps, mapDispatchToProps)(Question3)
