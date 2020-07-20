@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { loginUser } from './redux/actions/actions';
 import { Link } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
-const Question5 = (props) => {
+const Question6 = (props) => {
 
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
@@ -42,7 +42,7 @@ const Question5 = (props) => {
                     ? (
                         <div>
                             <Alert.Heading>Yeah!</Alert.Heading>
-                            <div>You can now login!</div>
+                            <div>You are logged in! Visit the special page!</div>
                         </div>
                     )
                     : null
@@ -93,6 +93,11 @@ const Question5 = (props) => {
                         Home
                     </button>
                 </Link>
+                <Link to="/special" className='offset-1' style={{ marginRight: 70 }}>
+                    <button >
+                        Special page
+                    </button>
+                </Link>
             </form>
 
         </div >
@@ -108,4 +113,4 @@ const mapStateToProps = (state) => {
 }
 
 //export
-export default connect(mapStateToProps, { loginUser })(Question5)
+export default connect(mapStateToProps, { loginUser })(Question6)

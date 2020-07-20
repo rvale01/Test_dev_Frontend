@@ -15,6 +15,7 @@ import Question3 from './Question3';
 import Question4 from './Question4';
 import Question5 from './Question5';
 import Question6 from './Question6';
+import Special from './Special'
 import Home from './Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Question2 from './Question2';
@@ -45,6 +46,9 @@ const App = (props) => {
             </Route>
             <Route exact path="/question6">
               <Question6 {...props} />
+            </Route>
+            <Route exact path="/special">
+              <Special {...props} />
             </Route>
           </Switch>
         </Router>
